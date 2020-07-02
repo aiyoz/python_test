@@ -10,52 +10,29 @@ options.add_experimental_option('prefs', {'intl.accept_languages': 'en,en_US'})
 
 #chrome_path = "C:\temp\chromedriver\chromedriver.exe" #chromedriver.exe執行檔所存在的路徑
 driver = webdriver.Chrome(r"C:\Python38-32\chromedriver.exe", options=options)
-time.sleep(3)
 
+aiyotime = datetime.now()
 executor_url = driver.command_executor._url
 session_id = driver.session_id
 print(session_id)
 print(executor_url)
 
-##########1111 
+##########1111
 driver.get('https://www.facebook.com/')
-
-time.sleep(3)
-
-#login=driver.find_element_by_xpath('//*[@id="email"]')
-#login.send_keys('aiyo0608@gmail.com')
-driver.find_element_by_xpath('//*[@id="email"]').send_keys('aiyo0608@gmail.com')
-time.sleep(1)
-driver.find_element_by_xpath('//*[@id="pass"]').send_keys('Ixhxpns1')
-#//*[@id="pass"]
-time.sleep(1)
-driver.find_element_by_xpath('//*[@id="u_0_b"]').click()
-time.sleep(3)
-
 driver.maximize_window()
 
-driver.find_element_by_xpath('//*[@id="mount_0_0"]/div/div/div[1]/div[3]/div/div/div[1]/div/div/div[2]/div/div/div[3]/div/div[2]/div/div/div/div[1]/div[1]').click()
+graph = facebook.GraphAPI(access_token="EAAIFBqucXHIBAPLO89miZAA1OfPK1PudbcGhF3LXKY35CNx6SjIYJjyvsSyM8ZCxunVeZAlD0PfrplTQh3eOsoXhecBBelb9jWDwET2ZBmiYqbkbc2K8UlirRLGRANcuJlzacClTjZB9k06H5bAllesJnIMPnegzPYZBmYwNOMkptDT2yESuVBDNIPhGZBUP6FBV1f1ffGwpNKoolu7Igy6U1snpuQkaXTZCPklqE6Y15k5G8qCaqKuMxEaFvzBgmP8ZD")
+print('GraphAPI is' , graph)
 
-#driver.find_element_by_xpath('//*[@id="mount_0_0"]/div/div/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/form/div/div[1]/div/div[2]/div[2]/div[1]/div[1]/div[1]/div/div/div/div/div[2]/div').click()
-#driver.find_element_by_css_selector('css=/html/body/div[1]/div/div/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/form/div/div[1]/div/div[2]/div[2]/div[1]/div[1]/div[1]/div/div/div/div/div[2]/div/div/div/div').send_keys('test')
+# Get the message from a post.
+#post = graph.get_object(id='post_id', fields='message')
+#print(post['message'])
 
-#useing pyautogui https://stackoverflow.com/questions/136734/key-presses-in-python
-pyautogui.press('space')
-time.sleep(1)
-pyautogui.typewrite('test\n')
-time.sleep(1)
-pyautogui.typewrite('post')
-driver.save_screenshot('D:\\AUTO\\screenshots\\test_aiyo02.png')
-
-driver.find_element_by_xpath('//*[@id="mount_0_0"]/div/div/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/form/div/div[1]/div/div[2]/div[3]/div[2]/div').click()
-
-#with open(r'C:\...properties','w') as f:
- #   s=s.replace('&lt;','<')
-  #  f.write(s)
-   # time.sleep(3)
-
-aiyotime = datetime.now()
-print('test FB login completed' , aiyotime)
+#to post to your wall
+#graph.put_object(parent_object='me', connection_name='feed', message='Hello, world')
+graph.put_object('me','feed',message='hello world')
+driver.save_screenshot('D:\\AUTO\\screenshots\\test_aiyo03.png')
+print('test FB PKG POST completed' , aiyotime , 'to' , datetime.now())
 
 #driver.quit()
-#driver.close()
+driver.close()

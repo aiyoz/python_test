@@ -3,6 +3,7 @@ from selenium import webdriver
 from datetime import datetime
 import time
 import pyautogui
+
 options = webdriver.ChromeOptions()
 options.add_experimental_option('prefs', {'intl.accept_languages': 'en,en_US'})
 
@@ -15,8 +16,10 @@ session_id = driver.session_id
 print(session_id)
 print(executor_url)
 
-##########1111 
+##########1111
 driver.get('https://www.facebook.com/')
+
+graph = facebook.GraphAPI(access_token="your_token", version="2.12")
 
 time.sleep(3)
 
@@ -47,8 +50,13 @@ driver.save_screenshot('D:\\AUTO\\screenshots\\test_aiyo02.png')
 
 driver.find_element_by_xpath('//*[@id="mount_0_0"]/div/div/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/form/div/div[1]/div/div[2]/div[3]/div[2]/div').click()
 
+#with open(r'C:\...properties','w') as f:
+ #   s=s.replace('&lt;','<')
+  #  f.write(s)
+   # time.sleep(3)
+
 aiyotime = datetime.now()
-print('test FB login completed' , aiyotime)
+print('test FB type post completed' , aiyotime)
 
 #driver.quit()
-#driver.close()
+driver.close()

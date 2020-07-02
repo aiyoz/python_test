@@ -29,4 +29,4 @@ time.sleep(3)
 print('test FB login completed')
 
 #driver.quit()
-#driver.close()
+driver.close()
