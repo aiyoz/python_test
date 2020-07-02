@@ -50,18 +50,6 @@ driver.save_screenshot('D:\\AUTO\\screenshots\\test_aiyo02.png')
 driver.find_element_by_xpath('//*[@id="mount_0_0"]/div/div/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/form/div/div[1]/div/div[2]/div[3]/div[2]/div').click()
 
 
-#with open(r'C:\Silverpop\PII\2019dec\1223\bg-crmi\src\resources\bundles\java\bgCrmi.properties','w') as f:
- #   s=driver.page_source.encode('utf-8')
-  #  s=s.replace('<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">','')
-   # s=s.replace('</pre></body></html>','')
-    #s=s.replace('amp;','')
-#    s=s.replace('&gt;','>')
- #   s=s.replace('&lt;','<')
-  #  f.write(s)
-   # time.sleep(3)   
-
-##########2222
-
 
 aiyotime = datetime.now()
 print('test FB login completed' , aiyotime)
