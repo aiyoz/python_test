@@ -1,5 +1,6 @@
 # encoding: utf-8
 # from https://github.com/playone/forpython/blob/master/Newbie/test8.py
+
 """
 流程控制 判斷式和迴圈
 每個流程的結尾都是:
