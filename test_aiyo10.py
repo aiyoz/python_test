@@ -13,4 +13,4 @@ print (x, y, s)
 # x+s 會出錯 因為是 int+str 不同型態
 print (ord('a'), ord('c'), chr(ord('a')+2)) # ord-字元轉編號 chr-編號轉字元
 print (y, int(s)/2, float(s)/2, 3%2)
-print (str(x+y), str(x)+str(y))
+print (str(x+y), str(x)+str(y)+'a')
