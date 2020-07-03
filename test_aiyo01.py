@@ -20,7 +20,7 @@ time.sleep(3)
 
 driver.find_element_by_xpath('//*[@id="email"]').send_keys('aiyo0608@gmail.com')
 time.sleep(1)
-driver.find_element_by_xpath('//*[@id="pass"]').send_keys('Ixhxpns1')
+driver.find_element_by_xpath('//*[@id="pass"]').send_keys('xxx')
 #//*[@id="pass"]
 time.sleep(1)
 driver.find_element_by_xpath('//*[@id="u_0_b"]').click()
