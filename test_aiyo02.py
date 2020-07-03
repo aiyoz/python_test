@@ -11,15 +11,7 @@ options.add_experimental_option('prefs', {'intl.accept_languages': 'en,en_US'})
 driver = webdriver.Chrome(r"C:\Python38-32\chromedriver.exe", options=options)
 time.sleep(3)
 
-executor_url = driver.command_executor._url
-session_id = driver.session_id
-print(session_id)
-print(executor_url)
-
-##########1111
 driver.get('https://www.facebook.com/')
-
-graph = facebook.GraphAPI(access_token="your_token", version="2.12")
 
 time.sleep(3)
 
@@ -59,4 +51,4 @@ aiyotime = datetime.now()
 print('test FB type post completed' , aiyotime)
 
 #driver.quit()
-driver.close()
+#driver.close()

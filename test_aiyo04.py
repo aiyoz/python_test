@@ -1,6 +1,6 @@
 #! Python3.8
 #encoding: utf-8
-
+# practice from https://github.com/playone/forpython/blob/master/Newbie/test1.py
 """
 這是一個簡單的程式範例
 主要是要表現第一行的解碼
