@@ -22,6 +22,8 @@ Student_object.append(student('Lin', 'S', 12))
 print (Student_object)
 
 Student_object[0].set_name('John')
+print (Student_object[0].name)
 
 for i in Student_object:
-    print (i.name, i.grade, i.age)
+    print (i ,i.name, i.grade, i.age)
+    #print (i)
