@@ -11,7 +11,7 @@ aiyolist.append(1)
 aiyolist.append(2)
 print(aiyolist[0])
 print(aiyolist[1])
-aiyolist.
+aiyolist.append(99)
 print(aiyolist[2])
 
 aiyolist2 = [5.5, "hi", 3, 99, 222, 222]

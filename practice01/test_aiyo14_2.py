@@ -10,7 +10,7 @@ with open('db2.txt') as f:
     readfile=f.read()
     print(readfile)
     print(f)
-    with open('copy.txt','w') as ff:
+    with open('copy.txt', 'w') as ff:
         readfile = readfile + '\n\ntest2020/7/6'
         ff.write(readfile)
     print(readfile)
