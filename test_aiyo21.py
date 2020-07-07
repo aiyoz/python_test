@@ -2,7 +2,7 @@
 # from https://github.com/playone/forpython/blob/master/Newbie/test18.py
 
 """
-re 表示式的練習
+re 正規表示式的練習
 """
 
 
@@ -14,9 +14,12 @@ regexp = re.compile(r'(?P<last>[a-zA-Z]+),' #?P<name> 群組化
                     r': (?P<phone>\d\d\d\d-?\d\d\d\d\d\d)'
                     )
 file = open('dirbook.txt', 'r')
+filew = open('dirbookre.txt', 'w')
+filew.writelines('first_name middle_name last_name +phone_no\n')
 for line in file.readlines():
-    #print(line)
+    print(line)
     result = regexp.search(line)
+    print(result)
     if result==None:
         print ('Not found')
     else:
@@ -26,11 +29,11 @@ for line in file.readlines():
         if middle_name==None:
             middle_name = ''
         phone_no = result.group('phone')
-        print ('Name: '+first_name+' ' \
-        + middle_name + ' ' \
-        + last_name +'\n' \
+        print ('Name: '+'fn:'+first_name+' ' \
+        + 'mn:'+middle_name + ' ' \
+        + 'ln:'+last_name +'\n' \
         + 'Phone: ' + phone_no)
-
+        filew.writelines(first_name+' '+middle_name+' '+last_name+':'+phone_no+'\n')
 
 file.close()
 
