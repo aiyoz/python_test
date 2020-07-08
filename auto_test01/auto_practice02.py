@@ -24,15 +24,15 @@ import xlrd
 importlib.reload(sys)
 #sys.setdefaultencoding()
 df = pd.read_excel('copy2.xls')
-print(df)
+#print(df)
 url = 'https://udn.com/rank/pv/2'
 html = requests.get(url,verify=False).text
 doc = lxml.html.fromstring(html)
 
-search_title = list(df.iloc[:, 0])
-print(search_title)
-search_link = list(df.iloc[:, 1])
-print(search_link)
+#search_title = list(df.iloc[:, 0])
+#print(search_title)
+#search_link = list(df.iloc[:, 1])
+#print(search_link)
 
 #titles = doc.xpath('//h3[@class="rounded-thumb__title"]/a/text()')
 #href = doc.xpath('//h3[@class="rounded-thumb__title"]/a/@href')
@@ -45,17 +45,23 @@ href = doc.xpath('////div[@class="story-list__news"]/div[2]/h2/a/@href')
 #/html/body/main/div/aside/div/div[2]/div/div[1]/h3/a
 i=0
 j=0
+#k=0
+#for k in range(len(titles)-len(df)):
+    #df.append(df.iloc[0:1,])
+#print(df)
+print(len(df))
 print(len(titles))
-print(len(href))
+#print(len(href))
 
 for i in range(len(titles)):
-    df.iloc[:, 0] = titles[i]
-    print(titles[i])
-    print(df.iloc[:, 0])
+    df.iloc[i,0] = titles[i]
+    #print(titles[i])
+    #print(df.iloc[:, 0])
 
 for j in range(len(href)):
-    df.iloc[:, 1] = href[j]
-    print(href[j])
+    df.iloc[j,1] = href[j]
+    #print(href[j])
+    #print(df.iloc[:, 1])
 
 print(df)
 df.to_excel('copyto.xls', index = False)
