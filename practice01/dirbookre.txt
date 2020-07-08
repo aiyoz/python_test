@@ -1,0 +1,10 @@
+first_name middle_name last_name + phone_no + email
+John Winston Lennon:0800-123456aaa@bbb.db2
+James Paul McCartney:0204-123999ccccaaaa.com
+George  Harrison:0800-999333
+Richard  Starkey:0204-123777
+Ringo  Starr:0204-456777
+Steven Patrick Morrissey:0928-987654
+Johnny  Marr:0928-849952
+Andy  Rourke:0938111999
+Mike  Joyce:0936555444

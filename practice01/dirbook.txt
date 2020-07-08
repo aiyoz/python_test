@@ -1,0 +1,11 @@
+Beatles, Liverpool
+Lennon, John Winston: 0800-123456 aaa@bbb.db2
+McCartney, James Paul: 0204-123999 ccccaaaa.com
+Harrison, George: 0800-999333
+Starkey, Richard: 0204-123777
+Starr, Ringo: 0204-456777
+Smiths, Manchester
+Morrissey, Steven Patrick: 0928-987654
+Marr, Johnny: 0928-849952
+Rourke, Andy: 0938111999
+Joyce, Mike: 0936555444
