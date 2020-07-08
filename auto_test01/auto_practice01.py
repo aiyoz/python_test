@@ -44,6 +44,34 @@ class PythonOrgSearch(unittest.TestCase): #命名class, 此class繼承了unittes
         elem.send_keys(Keys.RETURN)
         assert 'No result found' in driver.page_source
 
+    def test_search_Google_in_python_org4(self):
+        driver = self.driver
+        driver.get("http://www.python.org")
+        self.assertIn('Python', driver.title)
+        elem = driver.find_element_by_name('q')
+        elem.send_keys('Google')
+        elem.send_keys(Keys.RETURN)
+        assert 'No result found' not in driver.page_source
+
+    def test_search_Google_in_python_org5(self):
+        driver = self.driver
+        driver.get("http://www.python.org")
+        self.assertIn('Python', driver.title)
+        elem = driver.find_element_by_name('q')
+        elem.send_keys('Google')
+        elem.send_keys(Keys.RETURN)
+        assert 'No result found' in driver.page_source
+
+    def test_search_in_python_org6(self):
+        driver = self.driver
+        driver.get("http://www.python.org")
+        #self.assertIn('Google', driver.title)
+        self.assertNotIn('Google', driver.title)
+
+    def test_search_in_python_org7(self):
+        self.driver.get("http://www.google.com")
+        self.assertIn('Google', self.driver.title)
+
     def tearDown(self): #清理測試環境
         self.driver.quit()
 
