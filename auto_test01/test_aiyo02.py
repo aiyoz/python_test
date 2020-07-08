@@ -38,7 +38,7 @@ time.sleep(1)
 pyautogui.typewrite('test\n')
 time.sleep(1)
 pyautogui.typewrite('post')
-driver.save_screenshot('D:\\AUTO\\screenshots\\test_aiyo02.png')
+driver.save_screenshot('D:\\AUTO\\python_test\\auto_test01\\screenshots\\test_aiyo02.png')
 
 driver.find_element_by_xpath('//*[@id="mount_0_0"]/div/div/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/form/div/div[1]/div/div[2]/div[3]/div[2]/div').click()
 
