@@ -4,8 +4,9 @@
 from https://github.com/playone/forpython/blob/master/Automation/test2.py
 ref https://blog.csdn.net/qq_36711420/article/details/79382327
 https://kknews.cc/zh-tw/code/ql6qx6g.html
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html
 
-Testing Pandas dataframe , iloc
+Testing Pandas dataframe , iloc , requests.get with url&text , lxml.html.fromstring
 
 """
 # encoding: utf-8
@@ -19,7 +20,8 @@ requests.packages.urllib3.disable_warnings()
 
 
 importlib.reload(sys)
-df = pd.read_excel('copy2.xls')
+#df = pd.read_excel('copy2.xls',sheet_name='1')
+df = pd.read_excel('copy2.xls',sheet_name='st02')
 url = 'https://udn.com/rank/pv/2'
 html = requests.get(url,verify=False).text
 doc = lxml.html.fromstring(html)

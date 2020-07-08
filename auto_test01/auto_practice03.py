@@ -1,17 +1,19 @@
 
 """
 from https://github.com/playone/forpython/blob/master/Automation/test3.py
-
+使用 Python 的 Beautiful Soup 模組自動下載並解析網頁資料，開發典型的網路爬蟲程式。
 """
 # encoding: utf-8
 
 import sys
-import urllib2
+import urllib3
 import time
 from bs4 import BeautifulSoup
 from selenium import webdriver
-reload(sys)
-sys.setdefaultencoding('utf8') # 設定編碼
+import importlib
+
+importlib.reload(sys)
+#sys.setdefaultencoding('utf8') # 設定編碼
 url = 'http://baike.baidu.com/starrank?fr=lemmaxianhua'
 driver = webdriver.Chrome() # 創建一個driver用於打開網頁
 driver.get(url) # 打開網頁
@@ -30,15 +32,15 @@ try:
                 counter = 0;
                 for star_name in names:
                     counter = counter + 1;
-                    print star_name.text # 明星的名字是a標籤裡面的文本, 雖然a標籤底下除了文本還有一個與文本同層級的img標籤, 但是.text輸出的只是文本
+                    print(star_name.text) # 明星的名字是a標籤裡面的文本, 雖然a標籤底下除了文本還有一個與文本同層級的img標籤, 但是.text輸出的只是文本
                     name_counter = name_counter + 1;
         driver.find_element_by_xpath("//a[contains(text(),'下一页')]").click() #  selenium的xpath 定位用法，找到包含“下一頁”的a標籤去點擊
         page = page + 1
         time.sleep(2) # 睡2秒讓網頁加載完再去分析下一個頁面的html代碼
         soup = BeautifulSoup(driver.page_source, 'html.parser')
-        print soup.select("body > div.content-wrapper > div.layout > div > div.ranking-table.cur > div > a.pTag.next")
+        print(soup.select("body > div.content-wrapper > div.layout > div > div.ranking-table.cur > div > a.pTag.next"))
 except:
-    print name_counter # 共爬取得明星的名字數量
+    print(name_counter) # 共爬取得明星的名字數量
 finally:
     driver.quit()
 
