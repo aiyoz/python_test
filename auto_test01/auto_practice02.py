@@ -12,14 +12,11 @@ Testing Pandas dataframe , iloc , requests.get with url&text , lxml.html.fromstr
 # encoding: utf-8
 
 import lxml.html
-import sys
-import importlib
 import pandas as pd
 import requests.packages.urllib3
 requests.packages.urllib3.disable_warnings()
 
 
-importlib.reload(sys)
 #df = pd.read_excel('copy2.xls',sheet_name='1')
 df = pd.read_excel('copy2.xls',sheet_name='st02')
 url = 'https://udn.com/rank/pv/2'
@@ -47,7 +44,9 @@ import requests
 import time
 import json
 import xlrd
+import sys,importlib 
 
+importlib.reload(sys)
 #sys.setdefaultencoding()
 #print(df)
 #search_title = list(df.iloc[:, 0])
