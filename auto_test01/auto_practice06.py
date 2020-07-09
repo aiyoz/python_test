@@ -18,6 +18,7 @@ driver = webdriver.Chrome()
 driver.get('http://www.baidu.com')
 
 search_result = list(df.iloc[:, 1]) #宣告變數，將dataframework的第二欄轉成List, 下面會將搜尋完成的結果放到這裡
+print(search_result)
 #print df
 def search_keyword(word): #word 在接下來的引用，會從excel那邊得到值來做此方法的動作
     driver.find_element_by_id('kw').clear()
@@ -34,10 +35,10 @@ for index, word in enumerate(list(df.iloc[:, 0])):
     index對應的就是索引序列的index, word則是索引序列裡面的值
     '''
     search_result[index] = search_keyword(word) #呼叫函式運行, 利用word做關鍵字搜尋，再將結果回放到search_result
-    #print search_result
+    print (search_result)
 
 df.iloc[:, 1] = search_result #回存到pandas 的dataframework
-
+print(df)
 df.to_excel('search_result.xls', index = False) #存檔。 index=faulse 表示不需寫入index到excel
 
 driver.quit()
