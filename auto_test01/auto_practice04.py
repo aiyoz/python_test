@@ -1,7 +1,7 @@
 
 """
 from https://github.com/playone/forpython/blob/master/Automation/test4.py
-practice parser with some table and requests
+practice parser with some table and requests without webdriver
 """
 # encoding: utf-8
 #from selenium import webdriver

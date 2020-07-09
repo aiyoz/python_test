@@ -1,7 +1,7 @@
 
 """
 from https://github.com/playone/forpython/blob/master/Automation/test5.py
-
+ref https://blog.csdn.net/yj1556492839/article/details/79882488
 練習用Pandas抓取網頁表格
 """
 
@@ -17,6 +17,9 @@ currency = dfs[0] #提取data framework
 currency = currency.iloc[:, 0:5] #提取某固定欄位 [列, 欄], : 是全提取, 0:5 是指提取1~5欄
 print(currency)
 currency.columns = [u'幣別', u'現金匯率-本行買入', u'現金匯率-本行買出', u'即期匯率-本行買入', u'即期匯率-本行買出']
+print(currency)
 #更換欄位名稱轉存到excel, u 是指將名稱換成unicode
 currency[u'幣別'] = currency[u'幣別'].str.extract(r'\((\w+)\)', expand = True) #提取欄位某名稱
+#
+print(currency)
 currency.to_excel('currency.xlsx') #存到excel檔案
