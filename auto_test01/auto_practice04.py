@@ -15,11 +15,14 @@ def main():
     #driver.get('http://rate.bot.com.tw/xrt?Lang=zh-TW')
     #resp=driver.page_source
     #soup = BeautifulSoup(resp, 'html.parser')
-
-    rows = soup.find('table','table').tbody.find_all('tr')
+    #print(soup)
+    rows = soup.find_all('div', attrs={'class' : 'visible-phone print_hide'})
     #print(rows)
     for row in rows:
         #print(row.stripped_strings)
+        #print(row)
+        #print(row.stripped_strings)
+        print(row.text.strip())
         print(s for s in row.stripped_strings)
 
 

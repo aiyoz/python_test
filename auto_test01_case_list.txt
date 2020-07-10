@@ -15,7 +15,10 @@ auto_practice08		input number for page to parser , encode , decode , encoding ,
 auto_practice09		
 
 
-
+======================
 urllib.request
 requests.packages.urllib3
 requests
+
+
+======================
