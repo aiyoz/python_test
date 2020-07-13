@@ -57,7 +57,7 @@ class Crawler():
         content = page.json()
 
     # For compatable with original data
-        date_str_mingguo = '{0}/{1:02d}/{2:02d}'.format(date_tuple[0], date_tuple[0], datetuble[3])
+        date_str_mingguo = '{0}/{1:02d}/{2:02d}'.format(date_tuple[0], date_tuple[0], date_tuple[3])
 
         for date in content['data5']:
             sign = '-' if date[9].find('green') > 0 else ''
@@ -107,8 +107,8 @@ class Crawler():
                 self._record(tr[0], row)
 
     def get_data(self, data_tuple):
-        print 'Crawling {}'.format(data_tuple)
-        self._get_tse_data(date_tuple)
+        print ('Crawling {}'.format(data_tuple))
+        self._get_tse_data(data_tuple)
         self._get_otc_data(data_tuple)
 
 def main():

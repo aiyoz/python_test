@@ -11,16 +11,22 @@ from https://github.com/playone/forpython/blob/master/Automation/test10-2.py
 import requests
 import pandas
 from bs4 import BeautifulSoup as bs
-import urllib,urllib.request
+import urllib,urllib.request,requests.packages.urllib3
+import html5lib
+requests.packages.urllib3.disable_warnings()
 
-url = "http://www.thsrc.com.tw/tw/TimeTable/SearchResult"
-request = urllib.request.urlopen(url)
-request.add_header("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36") #設定好header避免被判別為機器人
+url = "https://www.thsrc.com.tw/ArticleContent/a3b630bb-1066-4352-a1ef-58c7b4e8ef7c"
+#request = urllib.request.urlopen(url)
+request=requests.get(url,verify=False).text
+#request.add_header("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36") #設定好header避免被判別為機器人
 
-startstation_name = int(raw_input('請輸入數字代表開始的站名: 1.南港 2.台北 3.板橋 4.桃園 5.新竹 6.苗栗 7.台中 8.彰化 9.雲林 10.嘉義 11.台南 12.左營' + '\n'))
-endstation_name = int(raw_input('請輸入數字代表終點站名: 1.南港 2.台北 3.板橋 4.桃園 5.新竹 6.苗栗 7.台中 8.彰化 9.雲林 10.嘉義 11.台南 12.左營' + '\n'))
-search_data = str(raw_input('請輸入日期: (例如 2017/01/01) ' + '\n'))
-search_time = str(raw_input('請輸入時間: (例如 12:30, 請以半小時為區隔)' + '\n'))
+
+startstation_name = int(input('請輸入數字代表開始的站名: 1.南港 2.台北 3.板橋 4.桃園 5.新竹 6.苗栗 7.台中 8.彰化 9.雲林 10.嘉義 11.台南 12.左營' + '\n'))
+#print(startstation_name-1)
+endstation_name = int(input('請輸入數字代表終點站名: 1.南港 2.台北 3.板橋 4.桃園 5.新竹 6.苗栗 7.台中 8.彰化 9.雲林 10.嘉義 11.台南 12.左營' + '\n'))
+#print(endstation_name-1)
+search_date = str(input('請輸入日期: (例如 2017/01/01) ' + '\n'))
+search_time = str(input('請輸入時間: (例如 12:30, 請以半小時為區隔)' + '\n'))
 #使用者輸入想要查詢的資料，台鐵網頁會用post來傳輸資料
 
 stations = [ #各站名在高鐵網頁post裡面的form data 代碼，在這裡存成串列，之後直接呼叫帶入 formdata
@@ -41,20 +47,24 @@ stations = [ #各站名在高鐵網頁post裡面的form data 代碼，在這裡�
 form_data = {
     "StartStation": stations[startstation_name-1], #帶入使用者輸入的起點站
     "EndStation": stations[endstation_name-1],     #帶入使用者輸入的終點站
-    "SearchDate": search_data,                     #帶入使用者輸入的日期
+    "SearchDate": search_date,                     #帶入使用者輸入的日期
     "SearchTime": search_time,                     #帶入使用者輸入的時間
     "SearchWay":"DepartureInMandarin",
     "RestTime":"",
     "EarlyOrLater":""
 }
-
-res = requests.post("http://www.thsrc.com.tw/tw/TimeTable/SearchResult", data=form_data) #利用request.post帶出搜尋結果網頁
-
+#res = requests.get("https://www.thsrc.com.tw/ArticleContent/a3b630bb-1066-4352-a1ef-58c7b4e8ef7c", data=form_data , verify=False) #利用request.post帶出搜尋結果網頁
+#print(res.text)
+#print('=========')
+res = requests.post("https://www.thsrc.com.tw/ArticleContent/a3b630bb-1066-4352-a1ef-58c7b4e8ef7c", data=form_data , verify=False) #利用request.post帶出搜尋結果網頁
+print(res.text)
+print('=========')
+inf2=pandas.read_html()
 info = pandas.read_html(res.text, header=0)[0] #用pandas存成data frame 然後提取table出來
 info = info.ix[1:, 1:5]
-info.columns = [u'車次', u'出發時間', u'抵達時間', u'行車時間']
+info.columns = [u'出發時間', u'行車時間', u'抵達時間', u'車次']
 info = info.dropna()
-print info #列印結果
+print (info) #列印結果
 
 info.to_excel('traintime.xlsx', encoding='UTF-8', index=False) #轉入excel
 

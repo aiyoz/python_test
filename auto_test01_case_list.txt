@@ -1,24 +1,39 @@
 ======================
 auto_practice_driver00	open webdriver with Firefox , UI control and assert practicing
+
 auto_practice_driver01	open webdriver with Chrome, UI control and assert practicing
+
 auto_practice_driver02	test different kind of requests, urllib.request, requests.packages.urllib3, requests
+
 auto_practice01		unittest , class , def setUp(), test_testcases(), tearDown()
+
 auto_practice02		Testing Pandas dataframe , iloc , requests.packages.urllib3 with url&text , lxml.html.fromstring
 auto_practice02a	pandas & iloc
+
 auto_practice03		BeautifulSoup parser on name list with webdriver
+
 auto_practice04		practice parser on some tables with requests
+
 auto_practice05		pandas > list > data framework > excel xlsx file
+
 auto_practice06		read xls to do search , using defind method , enumerate(list(df.iloc[:, 0]))
+
 auto_practice07		practice with urllib.request , soup.find with attrs , strip() , csv
 auto_practice07a	try error
+
 auto_practice08		input number for page to parser , encode , decode , encoding , 
-auto_practice09		
+
+auto_practice09		execute_script('window.scrollTo(0, document.body.scrollHeight)') for scrolling web page, soup.select 
+
+auto_practice10		paser post
 
 
 ======================
-urllib.request
-requests.packages.urllib3
-requests
+urllib.request=>auto_practice07
+requests.packages.urllib3=>auto_practice02 needs skipping ssl error
+requests=>auto_practice04
+
+======================
 
 
 ======================

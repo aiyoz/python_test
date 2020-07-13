@@ -1,10 +1,8 @@
 
 """
 from https://github.com/playone/forpython/blob/master/Automation/test9.py
-
+ref https://blog.gtwang.org/programming/python-beautiful-soup-module-scrape-web-pages-tutorial/
 抓取瀑布式網頁的範例
-原本想抓取YAHOO新聞，但YAHOO block了 "window.scrollTo(0, document.body.scrollHeight);"這指令
-所以假如想爬取YAHOO的資料得要使用另外的方法
 """
 
 import xlwt #use excel
@@ -81,3 +79,5 @@ for block in soup.select('a'):
 restlist = 'rest_list_'+time.strftime('%Y%m%d')+'.xls' #檔名會依日期生成
 wb.save(restlist) #excel存檔
 driver.quit()
+
+#原本想抓取YAHOO新聞，但YAHOO block了 "window.scrollTo(0, document.body.scrollHeight);"這指令, 所以假如想爬取YAHOO的資料得要使用另外的方法
