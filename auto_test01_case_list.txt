@@ -25,7 +25,9 @@ auto_practice08		input number for page to parser , encode , decode , encoding ,
 
 auto_practice09		execute_script('window.scrollTo(0, document.body.scrollHeight)') for scrolling web page, soup.select 
 
-auto_practice10		paser post
+auto_practice10		paser, request.post, form_data
+
+auto_practice11		import os+mkdir+isdir, re, logging, argparse, 
 
 
 ======================

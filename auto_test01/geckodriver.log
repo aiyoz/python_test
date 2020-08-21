@@ -839,3 +839,12 @@ JavaScript warning: https://rate.bot.com.tw/Scripts/css3-mediaqueries.js, line 1
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1594974428021	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\TP0802~1\\AppData\\Local\\Temp\\rust_mozprofilegiz2ni"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1594974431656	Marionette	INFO	Listening on port 50573
+1594974432149	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 208: Error: Invalid autocomplete selectedIndex
+1594974436410	Marionette	INFO	Stopped listening on port 50573
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

@@ -17,9 +17,9 @@ time.sleep(3)
 
 #login=driver.find_element_by_xpath('//*[@id="email"]')
 #login.send_keys('aiyo0608@gmail.com')
-driver.find_element_by_xpath('//*[@id="email"]').send_keys('aiyo0608@gmail.com')
+driver.find_element_by_xpath('//*[@id="email"]').send_keys('@gmail.com')
 time.sleep(1)
-driver.find_element_by_xpath('//*[@id="pass"]').send_keys('Ixhxpns1')
+driver.find_element_by_xpath('//*[@id="pass"]').send_keys('')
 #//*[@id="pass"]
 time.sleep(1)
 driver.find_element_by_xpath('//*[@id="u_0_b"]').click()

@@ -25,7 +25,7 @@ startstation_name = int(input('請輸入數字代表開始的站名: 1.南港 2.
 #print(startstation_name-1)
 endstation_name = int(input('請輸入數字代表終點站名: 1.南港 2.台北 3.板橋 4.桃園 5.新竹 6.苗栗 7.台中 8.彰化 9.雲林 10.嘉義 11.台南 12.左營' + '\n'))
 #print(endstation_name-1)
-search_date = str(input('請輸入日期: (例如 2017/01/01) ' + '\n'))
+search_date = str(input('請輸入日期: (例如 2020.07.14) ' + '\n'))
 search_time = str(input('請輸入時間: (例如 12:30, 請以半小時為區隔)' + '\n'))
 #使用者輸入想要查詢的資料，台鐵網頁會用post來傳輸資料
 
@@ -47,9 +47,9 @@ stations = [ #各站名在高鐵網頁post裡面的form data 代碼，在這裡�
 form_data = {
     "StartStation": stations[startstation_name-1], #帶入使用者輸入的起點站
     "EndStation": stations[endstation_name-1],     #帶入使用者輸入的終點站
+    "SearchWay": "DepartureInMandarin",
     "SearchDate": search_date,                     #帶入使用者輸入的日期
     "SearchTime": search_time,                     #帶入使用者輸入的時間
-    "SearchWay":"DepartureInMandarin",
     "RestTime":"",
     "EarlyOrLater":""
 }
